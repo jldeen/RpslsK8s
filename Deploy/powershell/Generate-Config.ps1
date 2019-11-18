@@ -79,6 +79,7 @@ else {
     }
 }
 
+
 Write-Host "=======================================" -ForegroundColor Yellow
 Write-Host "RG: $subscription/$resourceGroup" -ForegroundColor Yellow
 if (-not $useCustomRegistry) {
@@ -128,7 +129,7 @@ else {
     $tokens.acrPassword=$registryPassword
 }
 
-$aks=$(az aks list -g $resourceGroup --query "[0]" --subscription $subscription -o json | ConvertFrom-Json)
+$aks=$(az aks list -g $resourceGroup --query "[0]" --subscription $subscription | ConvertFrom-Json)
 
 if ([String]::IsNullOrEmpty($aksHost)) {
     # get the AKS hostname
@@ -151,7 +152,7 @@ else {
 $tokens.tlsSecretName=$tlsSecretName
 
 # get the Key Vayult name, tenant and clientid
-$kv=$(az keyvault list -g $resourceGroup --query "[0]" --subscription $subscription -o json | ConvertFrom-Json)
+$kv=$(az keyvault list -g $resourceGroup --query "[0]" --subscription $subscription  | ConvertFrom-Json)
 $tokens.kvName = $kv.name
 $tokens.kvTenant = $kv.properties.tenantId
 if (-not $kvClientId) {
@@ -170,10 +171,10 @@ $funcname="NextMove"
 
 Write-Host "Found funcapp $($funcapp.name) in RG $resourceGroup"
 
-# bug in code - https://github.com/microsoft/RockPaperScissorsLizardSpock/issues/3
-# $funckeys=$(az rest --method post --uri "https://management.azure.com$($funcapp.id)/functions/$funcname/listKeys?api-version=2018-02-01" -o json --subscription $subscription | ConvertFrom-Json)
-$funckeys=$(az rest --method post --uri "https://management.azure.com$($funcapp.id)/host/default/listKeys?api-version=2018-02-01" -o json --subscription $subscription | ConvertFrom-Json)
+az rest --method post --uri "https://management.azure.com$($funcapp.id)/functions/$functionName/listKeys?api-version=2018-02-01"
 
+
+$funckeys=$(az rest --method post --uri "https://management.azure.com$($funcapp.id)/functions/$funcname/listKeys?api-version=2018-02-01" -o json --subscription $subscription | ConvertFrom-Json)
 $tokens.predictorbaseurl="https://$($funcapp.defaultHostName)/api/challenger/move?code=$($funckeys.default)"
 
 Write-Host "===========================================================" -ForegroundColor Yellow
