@@ -48,7 +48,6 @@ jobs:
       - name: Helm Install PR
         run: |
           cd Deploy/helm  
-          helm init --upgrade --wait 
           helm upgrade --install --namespace $GITHUB_HEAD_REF rpsls-node-$GITHUB_HEAD_REF node-player \
             -f gvalues.yml \
             --set image.repository=${{ secrets.CONTAINER_REGISTRY }}/node-player \
