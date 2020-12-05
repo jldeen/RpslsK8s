@@ -22,11 +22,11 @@ Languages used in this application include .NET, Node.js, Python, Java, and PHP.
 
 You will need an Azure subscription to work with this demo code. You can:
 
-- Open an account for free [Azure subscription](https://azure.microsoft.com/free/). You get credits that can be used to try out paid Azure services. Even after the credits are used up, you can keep the account and use free Azure services and features, such as the Web Apps feature in Azure App Service.
-- [Activate Visual Studio subscriber benefits](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/). Your Visual Studio subscription gives you credits every month that you can use for paid Azure services.
-- Create an [Azure Student Account](https://azure.microsoft.com/free/students/) and get free credit when you create your account.
+- Open an account for free [Azure subscription](https://azure.microsoft.com/free/?WT.mc_id=devops-0000-jessde). You get credits that can be used to try out paid Azure services. Even after the credits are used up, you can keep the account and use free Azure services and features, such as the Web Apps feature in Azure App Service.
+- [Activate Visual Studio subscriber benefits](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=devops-0000-jessde). Your Visual Studio subscription gives you credits every month that you can use for paid Azure services.
+- Create an [Azure Student Account](https://azure.microsoft.com/free/students/?WT.mc_id=devops-0000-jessde) and get free credit when you create your account.
 
-Learn more about it with [Microsoft Learn - Introduction to Azure](https://docs.microsoft.com/learn/azure).
+Learn more about it with [Microsoft Learn - Introduction to Azure](https://docs.microsoft.com/learn/azure?WT.mc_id=devops-0000-jessde).
 
 # Table of contents
 
@@ -54,7 +54,7 @@ Learn more about it with [Microsoft Learn - Introduction to Azure](https://docs.
 
 ## Pre-Requisites
 
-1. You will need [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) on Windows 10.
+1. You will need [Visual Studio 2019](https://visualstudio.microsoft.com/vs/?WT.mc_id=devops-0000-jessde) on Windows 10.
 1. You will need [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
 If you want to deploy this solution in Azure:
@@ -90,7 +90,7 @@ To run RPSLS you need to create the Azure infrastructure. There are two ways to 
 
 An ARM template is provided so you can create the whole infrastructure required for RPSLS
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FRockPaperScissorsLizardSpock%2Fmaster%2FDeploy%2Farm%2Fdeployment.json"><img src="Documents/Images/deploy-to-azure.png" alt="Deploy to Azure"/></a>
+<a href="https://portal.azure.com/?WT.mc_id=devops-0000-jessde#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FRockPaperScissorsLizardSpock%2Fmaster%2FDeploy%2Farm%2Fdeployment.json"><img src="Documents/Images/deploy-to-azure.png" alt="Deploy to Azure"/></a>
 
 - `servicePrincipalId`: Id of the service principal used to create the AKS `Required`
 - `servicePrincipalSecret`: Password of the service principal `Required`
@@ -117,7 +117,7 @@ Pre-requisites for this deployment are to have:
 
 - The AKS and all related resources deployed in Azure
 - A terminal with Powershell environment
-- [Azure CLI 2.0](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) installed.
+- [Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest&WT.mc_id=devops-0000-jessde) installed.
 - [Kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) installed with the last version (v1.16.0 at this moment).
 - Docker installed
 
@@ -228,12 +228,12 @@ The parameter `charts` allow for a selective installation of charts. Is a list o
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.microsoft.com.
+the rights to use your contribution. For details, visit https://cla.microsoft.com/?WT.mc_id=devops-0000-jessde.
 
 When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
 a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
 provided by the bot. You will only need to do this once across all repos using our CLA.
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/?WT.mc_id=devops-0000-jessde).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/?WT.mc_id=devops-0000-jessde) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
